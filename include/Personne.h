@@ -1,5 +1,6 @@
 #ifndef PERSONNE_H
 #define PERSONNE_H
+#pragma once
 
 #include <string>
 

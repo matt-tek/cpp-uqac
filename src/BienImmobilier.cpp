@@ -3,11 +3,11 @@
 BienImmobilier::BienImmobilier(int id, std::string adresse, double surface, std::string type, std::string statut)
     : id(id), adresse(adresse), surface(surface), type(type), statut(statut) {}
 
-void BienImmobilier::afficherDetails() {
+void BienImmobilier::afficherDetails() const {
+    std::cout << "Bien immobilier: " << type << std::endl;
     std::cout << "ID: " << id << std::endl;
     std::cout << "Adresse: " << adresse << std::endl;
     std::cout << "Surface: " << surface << std::endl;
-    std::cout << "Type: " << type << std::endl;
     std::cout << "Statut: " << statut << std::endl;
 }
 BienImmobilier::~BienImmobilier() {
@@ -66,3 +66,18 @@ Appartement::Appartement(int id, std::string adresse, double surface, std::strin
 
 Terrain::Terrain(int id, std::string adresse, double surface, std::string statut)
     : BienImmobilier(id, adresse, surface, "Terrain", statut) {}
+
+void Maison::afficherDetails() const {
+    BienImmobilier::afficherDetails();
+    std::cout << "Type: Maison" << std::endl;
+}
+
+void Appartement::afficherDetails() const {
+    BienImmobilier::afficherDetails();
+    std::cout << "Type: Appartement" << std::endl;
+}
+
+void Terrain::afficherDetails() const {
+    BienImmobilier::afficherDetails();
+    std::cout << "Type: Terrain" << std::endl;
+}

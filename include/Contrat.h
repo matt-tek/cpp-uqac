@@ -1,6 +1,6 @@
 #ifndef CONTRAT_H
 #define CONTRAT_H
-
+#pragma once
 #include <string>
 #include <iostream>
 
@@ -13,7 +13,7 @@ private:
 
 public:
     Contrat(int idContrat, std::string date, std::string typeContrat, std::string termesContrat);
-    ~Contrat();
+    virtual ~Contrat();
     void afficherContrat() const;
     void signerContrat();
 

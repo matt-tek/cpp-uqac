@@ -11,14 +11,14 @@ CXXFLAGS	=	-W -Wall -Wextra -std=c++20 -g3 -I./include
 
 CRIFLAG	=	-l criterion --coverage
 
-SRC	=	src/Point.cpp \
-		src/main.cpp \
+SRC	=	$(wildcard *.cpp)
+		
 
 SRC_TEST = tests/tests.cpp \
 
 OBJ	=	$(SRC:.cpp=.o)
 
-NAME	=	tp3
+NAME	=	projet
 
 NAME_TEST=	unit_test
 
