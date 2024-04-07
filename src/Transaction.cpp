@@ -1,4 +1,5 @@
 #include "Transaction.h"
+#include "Exception.h"
 
 Transaction::Transaction(int idTransaction, double montant, std::string dateTransaction)
     : idTransaction(idTransaction), montant(montant), dateTransaction(dateTransaction) {}
@@ -6,6 +7,9 @@ Transaction::Transaction(int idTransaction, double montant, std::string dateTran
 Transaction::~Transaction() {}
 
 void Transaction::effectuerTransaction() {
+    if (montant < 0) {
+        throw Exception("Montant de transaction ne peut pas être négatif");
+    }
     std::cout << "La transaction #" << idTransaction << " de montant " << montant << " a été effectuée le " << dateTransaction << std::endl;
 }
 

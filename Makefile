@@ -1,18 +1,11 @@
-##
-## EPITECH PROJECT, 2022
-## NANO
-## File description:
-## Makefile
-##
-
 CC	=	g++
 
 CXXFLAGS	=	-W -Wall -Wextra -std=c++20 -g3 -I./include
 
 CRIFLAG	=	-l criterion --coverage
 
-SRC	=	$(wildcard *.cpp)
-		
+SRC	=	$(wildcard *.cpp) $(wildcard src/*.cpp)
+
 
 SRC_TEST = tests/tests.cpp \
 

@@ -16,7 +16,8 @@ protected:
 
 public:
     BienImmobilier(int id, std::string adresse, double surface, std::string type, std::string statut);
-    ~BienImmobilier();
+//    ~BienImmobilier();
+    virtual ~BienImmobilier() {}
     virtual void afficherDetails() const;
     void mettreAJourStatut(std::string nouveauStatut);
 

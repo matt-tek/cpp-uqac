@@ -10,9 +10,9 @@ void BienImmobilier::afficherDetails() const {
     std::cout << "Surface: " << surface << std::endl;
     std::cout << "Statut: " << statut << std::endl;
 }
-BienImmobilier::~BienImmobilier() {
-    std::cout << "ID: " << id << "détruite" << std::endl;
-}
+//BienImmobilier::~BienImmobilier() {
+//    std::cout << "ID: " << id << "détruite" << std::endl;
+//}
 
 void BienImmobilier::mettreAJourStatut(std::string nouveauStatut) {
     statut = nouveauStatut;

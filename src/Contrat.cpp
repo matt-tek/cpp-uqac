@@ -1,7 +1,25 @@
 #include "Contrat.h"
+#include "Exception.h"
 
-Contrat::Contrat(int idContrat, std::string date, std::string typeContrat, std::string termesContrat)
-    : idContrat(idContrat), date(date), typeContrat(typeContrat), termesContrat(termesContrat) {}
+Contrat::Contrat(int idContrat, std::string date, std::string typeContrat, std::string termesContrat) {
+//    Rajouter une gestion d'eereur a l'aide de la class Exception
+    if (idContrat < 0) {
+        throw Exception("L'ID du contrat doit être positif.");
+    }
+    if (date.empty()) {
+        throw Exception("La date du contrat ne doit pas être vide.");
+    }
+    if (typeContrat.empty()) {
+        throw Exception("Le type de contrat ne doit pas être vide.");
+    }
+    if (termesContrat.empty()) {
+        throw Exception("Les termes du contrat ne doivent pas être vides.");
+    }
+    this->idContrat = idContrat;
+    this->date = date;
+    this->typeContrat = typeContrat;
+    this->termesContrat = termesContrat;
+}
 
 Contrat::~Contrat() {}
 
