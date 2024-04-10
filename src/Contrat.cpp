@@ -1,8 +1,9 @@
 #include "Contrat.h"
 #include "Exception.h"
 
+// Constructeur de la classe Contrat
 Contrat::Contrat(int idContrat, std::string date, std::string typeContrat, std::string termesContrat) {
-//    Rajouter une gestion d'eereur a l'aide de la class Exception
+    // Gestion des erreurs avec la classe Exception
     if (idContrat < 0) {
         throw Exception("L'ID du contrat doit être positif.");
     }
@@ -15,14 +16,17 @@ Contrat::Contrat(int idContrat, std::string date, std::string typeContrat, std::
     if (termesContrat.empty()) {
         throw Exception("Les termes du contrat ne doivent pas être vides.");
     }
+    // Initialisation des attributs du contrat
     this->idContrat = idContrat;
     this->date = date;
     this->typeContrat = typeContrat;
     this->termesContrat = termesContrat;
 }
 
+// Destructeur de la classe Contrat
 Contrat::~Contrat() {}
 
+// Méthode pour afficher les détails du contrat
 void Contrat::afficherContrat() const {
     std::cout << "ID Contrat: " << idContrat << std::endl;
     std::cout << "Date: " << date << std::endl;
@@ -30,10 +34,13 @@ void Contrat::afficherContrat() const {
     std::cout << "Termes du Contrat: " << termesContrat << std::endl;
 }
 
+// Méthode pour signer le contrat
 void Contrat::signerContrat() {
     std::cout << "Le contrat a été signé." << std::endl;
+    setTermesContrat("Signé");
 }
 
+// Méthodes accesseur pour récupérer les attributs du contrat
 int Contrat::getIdContrat() const {
     return idContrat;
 }
@@ -50,6 +57,7 @@ std::string Contrat::getTermesContrat() const {
     return termesContrat;
 }
 
+// Méthodes mutateurs pour modifier les attributs du contrat
 void Contrat::setIdContrat(int idContrat) {
     this->idContrat = idContrat;
 }
