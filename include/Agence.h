@@ -14,6 +14,7 @@ private:
 std::vector<BienImmobilier> biens;
 std::vector<Contrat> contrats;
 std::vector<Transaction> transactions;
+//  ! cannot do that because Personne is an abstract class
 std::vector<Personne> personnes;
 public:
     Agence(/* args */);
@@ -22,7 +23,8 @@ public:
     void AjouterClient(Personne personne);
     void enregistrerTransaction(Transaction transaction);
     void afficherAgence();
-    void creerContrat(const std::vector<Personne> &Personne, Contrat contrat, BienImmobilier bien);
+    void creerContrat(Client &client, const Contrat &contrat, BienImmobilier bien);
+
 };
 
 #endif // AGENCE_H

@@ -46,7 +46,9 @@ void Personne::setTelephone(std::string telephone) {
     this->telephone = telephone;
 }
 
-void Personne::setContrats(Contrat contrats) {
+void Personne::setContrats(const Contrat &contrats) {
+    std::cout << "Contrat ajouté : " << std::endl;
+    contrats.afficherContrat();
     this->contrats.push_back(contrats);
 }
 
@@ -57,10 +59,28 @@ Personne::~Personne() {}
 Client::Client(std::string nom, std::string adresse, std::string telephone)
     : Personne(nom, adresse, telephone) {}
 
+void Client::setContrats(const Contrat &contrats) {
+    Personne::setContrats(contrats);
+}
+
+
 // Constructeur de la classe Proprietaire, héritant de Personne
 Proprietaire::Proprietaire(std::string nom, std::string adresse, std::string telephone)
     : Personne(nom, adresse, telephone) {}
 
+void Proprietaire::setContrats(const Contrat &contrats) {
+    std::cout << "Contrat ajouté : " << std::endl;
+    contrats.afficherContrat();
+    Personne::setContrats(contrats);
+}
+
 // Constructeur de la classe Locataire, héritant de Personne
 Locataire::Locataire(std::string nom, std::string adresse, std::string telephone)
     : Personne(nom, adresse, telephone) {}
+
+
+void Locataire::setContrats(const Contrat &contrats) {
+    std::cout << "Contrat ajouté : " << std::endl;
+    contrats.afficherContrat();
+    Personne::setContrats(contrats);
+}

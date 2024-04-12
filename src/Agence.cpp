@@ -28,11 +28,8 @@ void Agence::afficherAgence() {
     }
 }
 
-void Agence::creerContrat(const std::vector<Personne> &personne, Contrat contrat, BienImmobilier bien) {
-    for (Personne personne : personne) {
-        personne.setContrats(contrat);
-    }
+void Agence::creerContrat(Client &client, const Contrat &contrat, BienImmobilier bien) {
+    client.setContrats(contrat);
     // contrat.setBien(bien);
-    this->contrats.push_back(contrat);
-   
+    this->contrats.push_back(contrat);  
 }

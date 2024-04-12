@@ -19,7 +19,7 @@ public:
     Personne(std::string nom, std::string adresse, std::string telephone);
 
     // Destructeur de la classe Personne
-    ~Personne();
+    virtual ~Personne();
 
     // Méthode pour afficher les informations de la personne
     void afficherInfos() const;
@@ -34,7 +34,7 @@ public:
     void setNom(std::string nom);
     void setAdresse(std::string adresse);
     void setTelephone(std::string telephone);
-    void setContrats(Contrat contrats);
+    virtual void setContrats(const Contrat &contrats);
 };
 
 // Définition de la classe Client, qui hérite de Personne
@@ -42,6 +42,7 @@ class Client : public Personne {
 public:
     // Constructeur de la classe Client
     Client(std::string nom, std::string adresse, std::string telephone);
+    void setContrats(const Contrat &contrats) override;
 };
 
 // Définition de la classe Proprietaire, qui hérite de Personne
@@ -49,6 +50,7 @@ class Proprietaire : public Personne {
 public:
     // Constructeur de la classe Proprietaire
     Proprietaire(std::string nom, std::string adresse, std::string telephone);
+    void setContrats(const Contrat &contrats) override;
 };
 
 // Définition de la classe Locataire, qui hérite de Personne
@@ -56,6 +58,7 @@ class Locataire : public Personne {
 public:
     // Constructeur de la classe Locataire
     Locataire(std::string nom, std::string adresse, std::string telephone);
+    void setContrats(const Contrat &contrats) override;
 };
 
 #endif // PERSONNE_H
