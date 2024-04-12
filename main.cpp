@@ -4,6 +4,7 @@
 #include "Exception.h"
 #include "utils.h"
 #include "Personne.h"
+#include "Agence.h"
 
 int main() {
     // Exercice 1
@@ -45,9 +46,6 @@ int main() {
     bien2->afficherDetails();
     bien3->afficherDetails();
 
-    delete bien1;
-    delete bien2;
-    delete bien3;
 
     std::cout << "\n\n" << std::endl;
     // Exercice 4
@@ -74,5 +72,33 @@ int main() {
     std::cout << "La maison a une plus grande surface que l'appartement: " << (result ? "true" : "false") << std::endl;
     result = compareSurface<Maison, Terrain>(maison1, terrain1);
     std::cout << "La maison a une plus grande surface que le terrain: " << (result ? "true" : "false") << std::endl;
+    
+    Agence agence;
+    agence.AjouterBien(maison1);
+    agence.AjouterBien(appartement1);
+    agence.AjouterClient(client1);
+    agence.AjouterClient(proprietaire1);
+    Contrat contrat2(2, "01-01-2026", "Vente", "Non-signé");
+    std::vector<Personne> personnes = {client1, proprietaire1};
+
+    std::cout << "\n\n" << std::endl;
+    std::cout << "Agence immobilière avant set contrat :" << std::endl;
+    agence.afficherAgence();
+
+    agence.creerContrat(personnes, contrat2, maison1);
+
+    std::cout << "\n\n" << std::endl;
+    std::cout << "Agence immobilière après set contrat :" << std::endl;
+    agence.afficherAgence();
+    std::cout << "\n\n" << std::endl;
+    client1.afficherInfos();
+    proprietaire1.afficherInfos();
+
+    // client1.afficherInfos();
+
+    delete bien1;
+    delete bien2;
+    delete bien3;
     return 0;
+
 }

@@ -4,6 +4,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <Contrat.h>
 
 // Définition de la classe Personne
 class Personne {
@@ -11,7 +13,7 @@ protected:
     std::string nom;        // Nom de la personne
     std::string adresse;    // Adresse de la personne
     std::string telephone;  // Numéro de téléphone de la personne
-
+    std::vector <Contrat> contrats; // contrats de la personne
 public:
     // Constructeur de la classe Personne
     Personne(std::string nom, std::string adresse, std::string telephone);
@@ -26,11 +28,13 @@ public:
     std::string getNom() const;
     std::string getAdresse() const;
     std::string getTelephone() const;
+    std::vector<Contrat> getContrats() const;
 
     // Méthodes mutateurs pour modifier les attributs de la personne
     void setNom(std::string nom);
     void setAdresse(std::string adresse);
     void setTelephone(std::string telephone);
+    void setContrats(Contrat contrats);
 };
 
 // Définition de la classe Client, qui hérite de Personne

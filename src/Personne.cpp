@@ -10,6 +10,10 @@ void Personne::afficherInfos() const {
     std::cout << "Nom: " << nom << std::endl;
     std::cout << "Adresse: " << adresse << std::endl;
     std::cout << "Téléphone: " << telephone << std::endl;
+    std::cout << "Contrats: " << std::endl;
+    for (Contrat contrat : contrats) {
+        contrat.afficherContrat();
+    }
 }
 
 // Méthodes accesseurs pour récupérer les attributs de la personne
@@ -25,6 +29,10 @@ std::string Personne::getTelephone() const {
     return telephone;
 }
 
+std::vector <Contrat> Personne::getContrats() const {
+    return contrats;
+}
+
 // Méthodes mutateurs pour modifier les attributs de la personne
 void Personne::setNom(std::string nom) {
     this->nom = nom;
@@ -36,6 +44,10 @@ void Personne::setAdresse(std::string adresse) {
 
 void Personne::setTelephone(std::string telephone) {
     this->telephone = telephone;
+}
+
+void Personne::setContrats(Contrat contrats) {
+    this->contrats.push_back(contrats);
 }
 
 // Destructeur de la classe Personne

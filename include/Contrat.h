@@ -14,6 +14,7 @@ private:
     std::string typeContrat;    // Type de contrat
     std::string termesContrat;  // Termes du contrat
 
+
 public:
     // Constructeur de la classe Contrat
     Contrat(int idContrat, std::string date, std::string typeContrat, std::string termesContrat);
@@ -38,6 +39,7 @@ public:
     void setDate(std::string date);
     void setTypeContrat(std::string typeContrat);
     void setTermesContrat(std::string termesContrat);
+    
 };
 
 #endif // CONTRAT_H
