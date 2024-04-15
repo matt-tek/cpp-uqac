@@ -32,17 +32,22 @@ void Contrat::afficherContrat() const {
     std::cout << "Date: " << date << std::endl;
     std::cout << "Type de Contrat: " << typeContrat << std::endl;
     std::cout << "Termes du Contrat: " << termesContrat << std::endl;
+    std::cout << "ID Bien: " << idBien << std::endl;
 }
 
 // Méthode pour signer le contrat
 void Contrat::signerContrat() {
     std::cout << "Le contrat a été signé." << std::endl;
-    setTermesContrat("Signé");
+    this->setTermesContrat("Signé");
 }
 
 // Méthodes accesseur pour récupérer les attributs du contrat
 int Contrat::getIdContrat() const {
     return idContrat;
+}
+
+int Contrat::getIdBien() const {
+    return this->idBien;
 }
 
 std::string Contrat::getDate() const {
@@ -60,6 +65,10 @@ std::string Contrat::getTermesContrat() const {
 // Méthodes mutateurs pour modifier les attributs du contrat
 void Contrat::setIdContrat(int idContrat) {
     this->idContrat = idContrat;
+}
+
+void Contrat::setIdBien(int idBien) {
+    this->idBien = idBien;
 }
 
 void Contrat::setDate(std::string date) {

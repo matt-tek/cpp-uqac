@@ -76,23 +76,24 @@ int main() {
     Agence agence;
     agence.AjouterBien(maison1);
     agence.AjouterBien(appartement1);
-    agence.AjouterClient(client1);
-    agence.AjouterClient(proprietaire1);
     Contrat contrat2(2, "01-01-2026", "Vente", "Non-signé");
 
     std::cout << "\n\n" << std::endl;
     std::cout << "Agence immobilière avant set contrat :" << std::endl;
     agence.afficherAgence();
 
-    agence.creerContrat(client1, contrat2, maison1);
+    agence.creerContrat(client1, maison1, proprietaire1);
+    agence.creerContrat(client1, maison1, proprietaire1);
 
-    std::cout << "\n\n" << std::endl;
-    std::cout << "Agence immobilière après set contrat :" << std::endl;
-    agence.afficherAgence();
+    // maison1.afficherDetails();
+
     std::cout << "\n\nClient 1 info after set contrat:" << std::endl;
     client1.afficherInfos();
-    std::cout << "\n\nProprietaire 1 info after set contrat:" << std::endl;
-    proprietaire1.afficherInfos();
+    agence.ajouterClient(client1);
+
+    std::cout << "\n\n" << std::endl;
+    std::cout << "Agence immobilière après ajout client :" << std::endl;
+    agence.afficherAgence();
     // delete bien1;
     // delete bien2;
     // delete bien3;

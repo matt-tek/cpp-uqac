@@ -10,11 +10,11 @@
 class Contrat {
 private:
     int idContrat;              // Identifiant du contrat
+    int idBien = 0;                 // Identifiant du bien immobilier
     std::string date;           // Date du contrat
     std::string typeContrat;    // Type de contrat
     std::string termesContrat;  // Termes du contrat
-
-
+    
 public:
     // Constructeur de la classe Contrat
     Contrat(int idContrat, std::string date, std::string typeContrat, std::string termesContrat);
@@ -30,6 +30,7 @@ public:
 
     // Méthodes accesseurs pour récupérer les attributs du contrat
     int getIdContrat() const;
+    int getIdBien() const;
     std::string getDate() const;
     std::string getTypeContrat() const;
     std::string getTermesContrat() const;
@@ -39,7 +40,7 @@ public:
     void setDate(std::string date);
     void setTypeContrat(std::string typeContrat);
     void setTermesContrat(std::string termesContrat);
-    
+    void setIdBien(int idBien);
 };
 
 #endif // CONTRAT_H

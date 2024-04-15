@@ -47,7 +47,6 @@ void Personne::setTelephone(std::string telephone) {
 }
 
 void Personne::setContrats(const Contrat &contrats) {
-    std::cout << "Contrat ajouté : " << std::endl;
     contrats.afficherContrat();
     this->contrats.push_back(contrats);
 }
